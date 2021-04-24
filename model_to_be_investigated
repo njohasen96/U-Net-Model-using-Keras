@@ -60,12 +60,6 @@ def display(display_list):
     plt.show()
 
 
-def show_dataset(datagen, num=1):
-    for i in range(0,num):
-        image,mask = next(datagen)
-        display([image[0], mask[0]])
-
-
 def unet(n_levels, initial_features=32, n_blocks=2, kernel_size=3, pooling_size=2, in_channels=1, out_channels=1):
     #n_blocks = how many conv in each level
     inputs = keras.layers.Input(shape=(IMAGE_HEIGHT, IMAGE_WIDTH, in_channels))
